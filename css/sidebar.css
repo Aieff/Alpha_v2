@@ -1,0 +1,104 @@
+.wrapper .sidebar {
+    background: #172031;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3 {
+    color: #fff;
+    margin: 10px 0 5px;
+}
+
+.wrapper .sidebar .profile p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.wrapper .sidebar ul {
+    margin-top: 30px;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid  #03e9f43d;;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+    transition: 0.4s;
+}
+
+.wrapper .sidebar ul li a .icon {
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+/*link hover */
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active {
+    color: #03e9f4;
+    border-right: 1px solid  rgb(0, 255, 0);
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon {
+    color: #03e9f4;
+}
+
+.wrapper .sidebar ul li a:hover::before,
+.wrapper .sidebar ul li a.active::before {
+    display: block;
+}
+
+.wrapper .section-bar  {
+    width: calc(100% - 225px);
+    margin-left: 225px;
+    transition: all 0.5s ease;
+}
+
+.wrapper .section-bar  .top-navbar {
+    background: #172031;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.wrapper .section-bar .top-navbar .side-action a {
+    font-size: 20px;
+    color: #f5f6fa;
+    transition: 0.4s;
+}
+
+.wrapper .section-bar .top-navbar .side-action a:hover {
+    color: #03e9f4;
+}
+
+body.active .wrapper .sidebar {
+    left: -225px;
+}
+
+body.active .wrapper .section-bar {
+    margin-left: 0;
+    width: 100%;
+}
