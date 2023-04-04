@@ -3,11 +3,6 @@ session_start();
 include 'conexao.php';
 include('../config.php');
 
-if (!$_SESSION['email']) {
-    header('Location: ../login.php');
-    exit();
-}
-
 if (empty($_POST['email']) || empty($_POST['password'])) {
     header('Location: ../login.php');
     exit();

@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('include/valida_sessao.php');
 include_once __DIR__ . ('/language/translate.php');
 ?>
 
