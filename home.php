@@ -23,8 +23,8 @@ include_once __DIR__ . ('/language/translate.php');
         <div class="sidebar">
             <!--profile image-->
             <div class="profile">
-                <img src="image/1680546628_2678559ac91f13d7c88b8dfddfd310fd.jpg" alt="">
-                <h3>Aieff</h3>
+                <img src="image/<?php echo $_SESSION['profile_image'];?>"><br>
+                <p><?php echo $_SESSION['email'];?></p>
                 <p>Developer</p>
             </div>
             <!--Menu item-->
@@ -53,9 +53,9 @@ include_once __DIR__ . ('/language/translate.php');
                     <span class="icon"><i class="fas fa-home"></i></span>
                     <span class="item">Admin</span>
                 </a></li>
-                <li><a href="#">
-                    <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="item">Settings</span>
+                <li><a href="include/logout.php">
+                    <span class="icon"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></span>
+                    <span class="item">Sair</span>
                 </a></li>
             </ul>
         </div>

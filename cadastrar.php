@@ -100,8 +100,17 @@ if (isset($_POST['save-user'])) {
     <div class="login">
     <h2><?php echo $keyword["title_success_cadastro"]; ?></h2><br>
     <p><?php echo $keyword["text_success_cadastro"]; ?></p>
+    <a href="login.php" class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <?php echo $keyword["cadastrar_voltar"]; ?>
+        </a>
     </div>
     <img src="img/controle.gif" class="controler">
+
+ 
 
 </body>
 

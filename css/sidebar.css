@@ -50,6 +50,7 @@
     color: #dee4ec;
     width: 30px;
     display: inline-block;
+    transition: 0.4s;
 }
 
 /*link hover */
