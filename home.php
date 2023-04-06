@@ -1,6 +1,7 @@
 <?php
 include('config.php');
 include('include/valida_sessao.php');
+include('include/profile.php');
 include_once __DIR__ . ('/language/translate.php');
 ?>
 
@@ -23,9 +24,9 @@ include_once __DIR__ . ('/language/translate.php');
         <div class="sidebar">
             <!--profile image-->
             <div class="profile">
-                <img src="image/<?php echo $_SESSION['profile_image'];?>"><br>
-                <p><?php echo $_SESSION['email'];?></p>
-                <p>Developer</p>
+                <img src="image/<?php echo $row[3] ?>">
+                <h3><?php echo $row[2] ?></h3>
+                <p><?php echo $row[1] ?></p>
             </div>
             <!--Menu item-->
             <ul>

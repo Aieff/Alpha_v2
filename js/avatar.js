@@ -12,10 +12,5 @@ function displayImage(e) {
         reader.readAsDataURL(e.files[0]);
     }
 }
-
-function alertImage(){
-    window.alert("Para melhor resolução de seu avatar a imagem deve conter 130 Pixels de Altura e Largura!")
-}
-
  
 
