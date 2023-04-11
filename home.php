@@ -1,4 +1,9 @@
 <?php
+$api = "http://localhost:3000/api/games/top";
+$ch = curl_init($api);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$games = json_decode((curl_exec($ch)));
+
 include('config.php');
 include('include/valida_sessao.php');
 include('include/profile.php');
@@ -24,9 +29,10 @@ include_once __DIR__ . ('/language/translate.php');
         <div class="sidebar">
             <!--profile image-->
             <div class="profile">
-                <img src="image/<?php echo $row[3] ?>">
+                <div class="spinner">
+                    <img src="image/<?php echo $row[3] ?>">
+                </div>
                 <h3><?php echo $row[2] ?></h3>
-                <p><?php echo $row[1] ?></p>
             </div>
             <!--Menu item-->
             <ul>
@@ -34,9 +40,9 @@ include_once __DIR__ . ('/language/translate.php');
                     <span class="icon"><i class="fas fa-home"></i></span>
                     <span class="item">Home</span>
                 </a></li>
-                <li><a href="#">
-                    <span class="icon"><i class="fas fa-Desktop"></i></span>
-                    <span class="item">My Dashboard</span>
+                <li><a href="#" id="open-modal">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="item" >Perfil</span>
                 </a></li>
                 <li><a href="#">
                     <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
@@ -68,8 +74,28 @@ include_once __DIR__ . ('/language/translate.php');
                     <a href="#"><i class="fas fa-bars"></i></a>
                 </div>
             </div>
-   
-     
+
+
+         
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+      <div class="modal-header">
+        <h2>PERFIL</h2>
+        <button class="close" id="close-modal">✖</button>
+      </div>
+      <div class="modal-body">
+        
+      <img src="image/<?php echo $row[3] ?>" onclick="triggerClick()" id="profileDisplay"/>
+            <input type="file" name="profileImage" id="profileImage" onchange="displayImage(this)" class="form-control" style="display: none;">
+      <ul>
+            <li>Nome:<input type="text" id="username" value="<?php echo $row[2] ?>"></li>
+            <li>Email:<input type="text" id="email" value="<?php echo $row[1] ?>"></li>
+        </ul>
+         <button type="submit" name="update-user" class="btnSave">SALVAR</button>
+        </div>
+      </div>
+
+
     <!--- HOME BANNNER --->
 
     <div class="banner">
@@ -107,14 +133,13 @@ include_once __DIR__ . ('/language/translate.php');
             <li class="list" data-filter="console">Console Games</li>
         </ul>
 
-
     <ul>
         <li>
         <div class="cardBx">
             <div class="card" data-item="pc">
-                <img src="img/banner-games/spider-man.png">
+                <img src="">
                 <div class="content">
-                    <h4>Spider-Man</h4>
+                    <h4><?=$games->name?></h4>
                     <div class="progress-line"><span></span></div>
                     <div class="info">
                         <p>Pricing<br><span>R$250</span></p>
@@ -227,5 +252,6 @@ include_once __DIR__ . ('/language/translate.php');
 </body>
 
 <script src="js/home.js"></script>
+<script src="js/avatar.js"></script>
 
 </html>
