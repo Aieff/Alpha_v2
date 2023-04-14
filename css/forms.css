@@ -191,6 +191,25 @@ body {
     padding-top: 15px;
 }
 
+#profileDisplay {
+    border: 2px solid #fff;
+    height: 130px;
+    width: 130px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 35px;
+}
+
+#profileDisplay:hover {
+    border: 2px solid #06caff;;
+    box-shadow: 1px 1px 15px #66c0f4cc;
+}
+
+/* Sucess cadastro */
+
 #btn-senha{
     font-size: 25px;
     cursor: pointer;
@@ -203,48 +222,24 @@ body {
     color: rgb(255, 0, 0); 
 }
 
-.spinner {
-    position: relative;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+@media screen and (max-width: 1200px) {
+    form{
+       width: 1000px;
+       background: blue;
+    }
 }
-
-.spinner::before,
-.spinner::after{
-    content: "";
-    position: absolute;
-    border-radius: inherit;
+@media  screen and (max-width: 1024px) {
+    form{
+       width: 700px;
+    }
 }
-
-.spinner img {
-    cursor: pointer;
-    position: relative;
-    width: 89%;
-    left: 100px;
-    border-radius: 100%;
+@media screen and (max-width: 768px) {
+    form{
+       width: 400px;
+    }
 }
-
-.spinner::before {
-    position: absolute;
-    bottom: 7px;
-    left: 93px;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(0deg, #01c1dd 0%, #0072ff 100%);
-    animation: spin .5s infinite linear;
-}
-
-.spinner::after {
-    width: 85%;
-    height: 85%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+@media  screen and (max-width: 425px) {
+    form{
+       width: 1320px;
     }
 }

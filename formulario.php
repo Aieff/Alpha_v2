@@ -64,9 +64,7 @@ include_once __DIR__ . ('/language/translate.php');
     <form class="login" action="cadastrar.php" method="post" id="form" enctype="multipart/form-data">
 
        <div class="form-group text-center">
-       <div class="spinner">
             <img src="image/placeholder.jpg" onclick="triggerClick()" id="profileDisplay" />
-       </div>
                     <input type="file" name="profileImage" id="profileImage" onchange="displayImage(this)" class="form-control" style="display: none;">
             <span class="alert-forms"></span>
         </div>

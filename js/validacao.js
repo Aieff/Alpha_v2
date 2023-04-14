@@ -77,7 +77,7 @@ function isEmail(email) {
   );
 }
 
-function mostrarSenha (){
+function mostrarSenha(){
   let inputPass = document.getElementById("password");
   let btnShowPass = document.getElementById("btn-senha");
 
